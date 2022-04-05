@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS cheat-sheet</title>
+
+    <link rel="stylesheet" href="lib/highlight/styles/default.min.css" />
+    <script src="lib/highlight/highlight.min.js"></script>
+
+    <script src="components/code-card.js" type="module"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cols.css" />
+
+    <link rel="stylesheet" href="css/layout/flex-columns.css" />
+    <link rel="stylesheet" href="css/layout/flex-rows.css" />
+    <link rel="stylesheet" href="css/layout/grid-columns.css" />
+    <link rel="stylesheet" href="css/layout/grid-rows.css" />
+
+    <link rel="stylesheet" href="css/pseudo/hover.css" />
+  </head>
+  <body>
+    <!-- Overview -->
+    <div class="center">
+      <h1>CSS cheat-sheet</h1>
+    </div>
+
+    <br />
+    <hr />
+
+    <!-- Layout Examples -->
+    <div class="center">
+      <h2>Layouts</h2>
+      <sup
+        >To see the code behind the example, hover your mouse over the
+        example.</sup
+      >
+    </div>
+    <pre slot="code"><code>
+&lt;div class="parent"&gt;
+  &lt;div class="red"&gt;&lt;p&gt;red&lt;/p&gt;&lt;/div&gt;
+  &lt;div class="green"&gt;&lt;p&gt;green&lt;/p&gt;&lt;/div&gt;
+  &lt;div class="blue"&gt;&lt;p&gt;blue&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+    <br />
+    <div class="examples">
+      <div>
+        <h3>Flex Layout Examples</h3>
+        <p>
+          Flex is probably what you need 99% of the time. It's pretty much the
+          modern standard for styling layouts of any kind of website. It also
+          makes life so much easier when it comes to positioning elements,
+          especially when trying to center things.
+        </p>
+      </div>
+
+      <!-- Flex columns -->
+      <code-card>
+        <div class="eg flex-columns" slot="example">
+          <div class="col r"><p>red</p></div>
+          <div class="col g"><p>green</p></div>
+          <div class="col b"><p>blue</p></div>
+        </div>
+        <pre slot="code"><code>
+.parent {
+  display: flex;
+  flex-direction: column;
+}
+        </code></pre>
+      </code-card>
+
+      <!-- Flex rows -->
+      <code-card>
+        <div class="eg flex-rows" slot="example">
+          <div class="col r"><p>red</p></div>
+          <div class="col g"><p>green</p></div>
+          <div class="col b"><p>blue</p></div>
+        </div>
+        <pre slot="code"><code>
+.parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+        </code></pre>
+      </code-card>
+
+      <div>
+        <h3>Grid Layout Examples</h3>
+        <p>
+          Grid is also becoming quite popular for more specific needs. It can
+          create layouts similar to flex, but with more specific rules and
+          slight complexity. It's also a lot easier to just use flex, however
+          when flex fails in more specific situations, grid fills the gap.
+        </p>
+      </div>
+
+      <!-- Grid columns -->
+      <code-card>
+        <div class="eg grid-rows" slot="example">
+          <div class="col r"><p>red</p></div>
+          <div class="col g"><p>green</p></div>
+          <div class="col b"><p>blue</p></div>
+        </div>
+        <pre slot="code"><code>
+.parent {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+        </code></pre>
+      </code-card>
+
+      <!-- Grid rows -->
+      <code-card>
+        <div class="eg grid-columns" slot="example">
+          <div class="col r"><p>red</p></div>
+          <div class="col g"><p>green</p></div>
+          <div class="col b"><p>blue</p></div>
+        </div>
+        <pre slot="code"><code>
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+        </code></pre>
+      </code-card>
+    </div>
+
+    <br />
+    <hr />
+
+    <!-- Pseudo Classes -->
+    <div class="center">
+      <h2>Pseudo Classes</h2>
+    </div>
+    <pre slot="code"><code>
+&lt;a class="element"&gt; Button &lt;/a&gt;
+    </code></pre>
+    <br />
+    <div class="examples">
+      <div>
+        <h3>Hover (<code>:hover</code>)</h3>
+        <p>
+          Hover is a super common pseudo class. This class lets you change the
+          CSS of an element when the user hovers over it. A common use for this
+          is when hovering over a button, it would slightly change in color and
+          size.
+        </p>
+      </div>
+      <div class="center">
+        <a class="button pseudo-hover"> Button </a>
+      </div>
+      <pre><code>
+.element {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+.element:hover {
+    color: #fff;
+    background-color: #000;
+}
+      </code></pre>
+    </div>
+
+    <div class="footer"></div>
+
+    <!-- Code highlighting -->
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
